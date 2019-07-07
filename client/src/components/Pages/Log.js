@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-class Home extends Component {
+class Log extends Component {
     state = {
         user: "",
         hours: 0,
@@ -61,4 +61,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default Log;

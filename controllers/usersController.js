@@ -5,8 +5,6 @@ function generateId(object) {
   return object;
 }
 
-
-
 // Defining methods for the booksController
 module.exports = {
   findAll: function (req, res) {

@@ -7,8 +7,8 @@ export default {
   getUser: function(id) {
     return axios.get("/api/users/" + id);
   },
-  createUser: function() {
-    return axios.post("/api/users/")
+  createUser: function(user) {
+    return axios.post("/api/users/", user)
   },
   addActivity: function(id) {
     return axios.put("/api/users/" + id + "/activities");

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-class Home extends Component {
+class List extends Component {
     state = {
         user: "none"
     }
@@ -14,14 +14,6 @@ class Home extends Component {
     }
 
 
-
-
-
-
-
-
-
-
 }
 
-export default Home;
+export default List;
