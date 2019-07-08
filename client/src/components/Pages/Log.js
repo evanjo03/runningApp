@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom';
 
 
 class Log extends Component {
@@ -8,9 +9,26 @@ class Log extends Component {
         minutes: 0,
         seconds: 0,
         distance: 0,
-        description: ""
+        description: "",
+        redirect: false
     }
 
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/' />
+        }
+    }
+
+    componentDidMount = () => {
+        let user = localStorage.getItem("username");
+        (user ? this.setState({ "user": user }) : this.setRedirect());
+    }
     handleChange = event => {
         const { name, value } = event.target;
 
@@ -22,12 +40,13 @@ class Log extends Component {
     handleSubmit = event => {
         event.preventDefault();
         console.log(this.state)
-        
+
     }
 
     render() {
         return (
             <div>
+                {this.renderRedirect()}
                 <h1>Log</h1>
                 <h2>{this.state.name}</h2>
                 <form onSubmit={this.handleSubmit}>
