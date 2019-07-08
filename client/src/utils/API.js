@@ -4,8 +4,8 @@ export default {
   getUsers: function() {
     return axios.get("/api/users");
   },
-  getUser: function(id) {
-    return axios.get("/api/users/" + id);
+  getUser: function(username) {
+    return axios.get("/api/users/" + username);
   },
   createUser: function(user) {
     return axios.post("/api/users/", user)

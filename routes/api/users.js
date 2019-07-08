@@ -7,9 +7,15 @@ router.route("/")
   .post(usersController.create);
 
 // Matches with "/api/users/:id"
+// router
+//   .route("/:id")
+//   .get(usersController.findById)
+//   .put(usersController.update)
+
+// Matches with "/api/users/:username"
 router
-  .route("/:id")
-  .get(usersController.findById)
+  .route("/:username")
+  .get(usersController.findByUsername)
   .put(usersController.update)
 
 // Matches with "/api/users/:id/activities"
@@ -17,7 +23,7 @@ router
   .route("/:id/activities")
   .put(usersController.addActivity)
 
-router  
+router
   .route("/:id/activites/:activityId")
   .delete(usersController.removeActivity)
 
