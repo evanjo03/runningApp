@@ -34,17 +34,22 @@ class Home extends Component {
     handleSubmit = event => {
         event.preventDefault();
         console.log(this.state);
-        API.createUser({
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            username: this.state.username,
-            password: this.state.password
+        API.getUser(this.state.username).then(result => {
+            (result.data ? alert("User already exists") :
+                API.createUser({
+                    firstName: this.state.firstName,
+                    lastName: this.state.lastName,
+                    username: this.state.username,
+                    password: this.state.password
+                })
+                    .then(result => {
+                        console.log(result.status)
+                        localStorage.setItem("username", JSON.stringify(result.data.username));
+                        this.setRedirect();
+                    })
+            );
         })
-            .then(result => {
-                console.log(result.status)
-                localStorage.setItem("userID", JSON.stringify(result.data._id));
-                this.setRedirect();
-            })
+
 
     }
 
