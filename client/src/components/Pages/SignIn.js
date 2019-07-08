@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../utils/API"
 
 
 
@@ -18,7 +19,18 @@ class SignIn extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        API.getUser(this.state.username).then(result => {
+            (result.data ? 
+                (this.validatePassword(result.data.password, this.state.password) ? 
+                localStorage.setItem("username", JSON.stringify(result.data.username)) : 
+                alert("incorrect password")) : 
+                alert("user doesn't exist")
+            );
+        })
+    }
+
+    validatePassword = (savedPW, enteredPW) => {
+        return (savedPW === enteredPW)
     }
 
     render() {
