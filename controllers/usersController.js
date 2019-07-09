@@ -38,9 +38,9 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  addActivity: function (req, res) {
+  addRun: function (req, res) {
     db.User
-      .findOneAndUpdate({ _id: req.params.id }, { $push: { activities: generateId(req.body) } }, {new : true } )
+      .findOneAndUpdate({ username: req.params.username }, { $push: { activities: generateId(req.body) } }, {new : true } )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

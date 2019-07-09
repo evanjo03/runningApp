@@ -20,8 +20,8 @@ router
 
 // Matches with "/api/users/:id/activities"
 router
-  .route("/:id/activities")
-  .put(usersController.addActivity)
+  .route("/:username/activities")
+  .put(usersController.addRun)
 
 router
   .route("/:id/activites/:activityId")
