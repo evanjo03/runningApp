@@ -10,8 +10,8 @@ export default {
   createUser: function(user) {
     return axios.post("/api/users/", user)
   },
-  addActivity: function(id) {
-    return axios.put("/api/users/" + id + "/activities");
+  addRun: function(username, run) {
+    return axios.put("/api/users/" + username + "/activities", run);
   },
   deleteActivity: function(userId, activityId) {
     return axios.delete("/api/users/" + userId + "/activities/" + activityId);
