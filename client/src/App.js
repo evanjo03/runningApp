@@ -5,7 +5,6 @@ import List from "./components/Pages/List";
 import Nav from "./components/Nav"
 import SignIn from "./components/Pages/SignIn";
 import Footer from "./components/Footer"
-import Navbar from "./components/Navbar";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -15,8 +14,7 @@ function App() {
     <div>
       <Router>
         <div>
-          <Nav>Hi</Nav>
-          <Navbar/>
+          <Nav/>
           <Route exact path="/" component={Home} />
           <Route exact path="/log" component={Log} />
           <Route exact path="/list" component={List} />
