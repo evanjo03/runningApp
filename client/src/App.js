@@ -2,6 +2,7 @@ import React from 'react';
 import Home from "./components/Pages/Home";
 import Log from "./components/Pages/Log";
 import List from "./components/Pages/List";
+import Nav from "./components/Nav"
 import SignIn from "./components/Pages/SignIn";
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar";
@@ -14,6 +15,7 @@ function App() {
     <div>
       <Router>
         <div>
+          <Nav>Hi</Nav>
           <Navbar/>
           <Route exact path="/" component={Home} />
           <Route exact path="/log" component={Log} />
