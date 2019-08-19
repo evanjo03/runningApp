@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from 'react-router-dom';
 import API from "../../utils/API"
+import { Form, FormGroup, Label, Input, CardBody, Card , Row, Col } from "reactstrap"
 
 
 class Home extends Component {
@@ -49,37 +50,47 @@ class Home extends Component {
                     })
             );
         })
-
-
     }
 
     render() {
         return (
-            <div>
+            <Row>
+                <Col sm="6" md="6" lg="6" className="mx-auto">
+                    <Card className="loginCard">
+                    <CardBody>
                 {this.renderRedirect()}
+                
                 <h1>New User</h1>
                 <h2>{this.state.name}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label>First Name:</label>
-                    <br></br>
-                    <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
-                    <br></br>
-                    <label>Last Name:</label>
-                    <br></br>
-                    <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
-                    <br></br>
-                    <label>Username:</label>
-                    <br></br>
-                    <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-                    <br></br>
-                    <label> Password:</label>
-                    <br></br>
-                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
+                <Form onSubmit={this.handleSubmit}>
+                <FormGroup>
+                    <Label>First Name</Label>
+                    <Input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Last Name</Label>
+                    <Input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Username</Label>
+                    <Input type="text" name="userName" value={this.state.username} onChange={this.handleChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Password</Label>
+                    <Input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Confirm Password</Label>
+                    <Input type="password" name="password" value={this.state.confirmPassword} onChange={this.handleChange} />
+                </FormGroup>
+                    <Input type="submit" value="Submit" />
                     <br></br>
                     <Link to="/signin">Already signed up? Sign in</Link>
-                </form>
-            </div>
+                </Form>
+                </CardBody>
+                </Card>
+                </Col>
+                </Row>
         )
     }
 }

@@ -9,7 +9,7 @@ import {
 
 const style = {
   navBorder: {
-    background: "none",
+    background: "#ffffff",
     borderBottom: "1px solid gray"
   }
 

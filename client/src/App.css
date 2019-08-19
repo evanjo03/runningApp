@@ -1,7 +1,50 @@
 .App {
   text-align: center;
+  
 }
 
+html {
+  height: 100%;
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+.container {
+  min-height: 100%;
+}
+
+body {
+  background:  #6b5b95;
+  background: linear-gradient(to right, #6b5b95, #33AEFF);
+  height: 100%;
+  margin-bottom: 60px;
+}
+
+.loginCard {
+  background: white;
+  margin: 1.5em;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.imageCard {
+  margin: 1.5em;
+}
+
+.wrapper {
+  min-height: 100%;
+
+
+  /* Equal to height of footer */
+}
+.push {
+  height: 50px;
+}
+
+.img-responsive {
+  display: block; 
+   max-width: 100%; 
+   height: auto;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
