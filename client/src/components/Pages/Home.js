@@ -73,7 +73,7 @@ class Home extends Component {
                 </FormGroup>
                 <FormGroup>
                     <Label>Username</Label>
-                    <Input type="text" name="userName" value={this.state.username} onChange={this.handleChange} />
+                    <Input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label>Password</Label>
