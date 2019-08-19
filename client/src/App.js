@@ -17,7 +17,7 @@ function App() {
     <div>
       <Router>
         <div>
-      <Navigation/>
+          <Navigation/>
           <Container>
           <Route exact path="/" component={Home} />
           <Route exact path="/log" component={Log} />
