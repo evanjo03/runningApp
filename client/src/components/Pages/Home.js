@@ -79,10 +79,6 @@ class Home extends Component {
                     <Label>Password</Label>
                     <Input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
                 </FormGroup>
-                <FormGroup>
-                    <Label>Confirm Password</Label>
-                    <Input type="password" name="password" value={this.state.confirmPassword} onChange={this.handleChange} />
-                </FormGroup>
                     <Input type="submit" value="Submit" />
                     <br></br>
                     <Link to="/signin">Already signed up? Sign in</Link>
