@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Redirect } from "react-router-dom"
+import { Redirect } from "react-router-dom";
+import { Form, FormGroup, Label, Input, CardBody, Card , Row, Col } from "reactstrap"
 
 
 
@@ -54,22 +55,30 @@ class SignIn extends Component {
 
     render() {
         return (
-            <div>
+            <Row>
                 {this.renderRedirect()}
-                <h1>Existing User</h1>
-                <h2>{this.state.name}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username:</label>
-                    <br></br>
-                    <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-                    <br></br>
-                    <label> Password:</label>
-                    <br></br>
-                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
-                    <br></br>
-                </form>
-            </div>
+            <Col sm="6" md="6" lg="6" className="mx-auto">
+                <Card className="loginCard">
+                <CardBody>
+            {this.renderRedirect()}
+            
+            <h1>Existing User</h1>
+            <h2>{this.state.name}</h2>
+            <Form onSubmit={this.handleSubmit}>
+            <FormGroup>
+                <Label>Username</Label>
+                <Input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+            </FormGroup>
+            <FormGroup>
+                <Label>Password</Label>
+                <Input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+            </FormGroup>
+                <Input type="submit" value="Submit" />
+            </Form>
+            </CardBody>
+            </Card>
+            </Col>
+            </Row>
         )
     }
 }

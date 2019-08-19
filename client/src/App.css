@@ -3,9 +3,21 @@
   
 }
 
+html {
+  height: 100%;
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+.container {
+  min-height: 100%;
+}
+
 body {
   background:  #6b5b95;
   background: linear-gradient(to right, #6b5b95, #33AEFF);
+  height: 100%;
+  margin-bottom: 60px;
 }
 
 .loginCard {
@@ -16,6 +28,16 @@ body {
 
 .imageCard {
   margin: 1.5em;
+}
+
+.wrapper {
+  min-height: 100%;
+
+
+  /* Equal to height of footer */
+}
+.push {
+  height: 50px;
 }
 
 .img-responsive {
