@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import API from "../../utils/API"
+import { Form, FormGroup, Label, Input, CardBody, Card , Row, Col } from "reactstrap"
 
 
 class Log extends Component {
@@ -56,27 +57,56 @@ class Log extends Component {
 
     render() {
         return (
-            <div>
-                {this.renderRedirect()}
-                <h1>Log</h1>
-                <h2>{this.state.username}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label> Duration (hrs, min, sec):</label>
-                    <br></br>
-                    <input type="number" name="hours" value={this.state.hours} onChange={this.handleChange} placeholder="hours" />
-                    <input type="number" name="minutes" value={this.state.minutes} onChange={this.handleChange} />
-                    <input type="number" name="seconds" value={this.state.seconds} onChange={this.handleChange} />
-                    <br></br>
-                    <label>Distance (miles):</label>
-                    <br></br>
-                    <input type="number" name="distance" value={this.state.distance} onChange={this.handleChange} />
-                    <br></br>
-                    <label> Comments:</label>
-                    <br></br>
-                    <textarea type="text" name="comments" value={this.state.comments} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
+            <Row>
+            <Col sm="6" md="6" lg="6" className="mx-auto">
+                <Card className="loginCard">
+                <CardBody>
+            {this.renderRedirect()}
+            
+            <h1>Log a Run</h1>
+            <h2>{this.state.name}</h2>
+            <Form onSubmit={this.handleSubmit}>
+                <Row form>
+                    <Col md={4}>
+                        <FormGroup>
+                        <Label>Hours</Label>
+                        <Input type="number" name="hours" value={this.state.hours} onChange={this.handleChange} />
+                        </FormGroup>
+                    </Col>
+                    <Col md={4}>
+                        <FormGroup>
+                        <Label>Minutes</Label>
+                        <Input type="number" name="minutes" value={this.state.minutes} onChange={this.handleChange} />
+                        </FormGroup>
+                    </Col>
+                    <Col md={4}>
+                        <FormGroup>
+                        <Label>Seconds</Label>
+                        <Input type="number" name="seconds" value={this.state.seconds} onChange={this.handleChange} />
+                        </FormGroup>
+                    </Col>
+                </Row>
+                <Row form>
+                    <Col md={12}>
+                        <FormGroup>
+                        <Label>Distance in Miles</Label>
+                        <Input type="number" name="distance" value={this.state.distance} onChange={this.handleChange} />
+                        </FormGroup>
+                    </Col>
+                    <Col md={12}>
+                        <FormGroup>
+                        <Label for="exampleText" >Text Area</Label>
+                        <Input type="textarea" name="description" value={this.state.description} onChange={this.handleChange} />
+                        </FormGroup>
+                        <Input id="submit-button" type="submit" value="Submit" />
+                    </Col>
+                </Row>
+            </Form>
+            </CardBody>
+            </Card>
+            </Col>
+            </Row>
+            
         )
     }
 
