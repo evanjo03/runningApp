@@ -20,6 +20,14 @@ body {
   margin-bottom: 60px;
 }
 
+.runCard {
+  margin: 20px;
+}
+
+.listCardWrapper {
+  text-align: center;
+}
+
 .loginCard {
   background: white;
   margin: 1.5em;
