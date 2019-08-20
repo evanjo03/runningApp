@@ -1,15 +1,50 @@
 import React from "react";
-
+import { CardBody, Card , Row, Col } from "reactstrap";
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 function Run(props) {
 
+    let formatNumber = num => {
+        return ("0" + num).slice(-2)
+    }
+
+    let minutes = formatNumber(props.minutes);
+    let hours = formatNumber(props.hours);
+    let seconds = formatNumber(props.seconds);
+
+    //date stuff
+    let d = new Date("1970", "00", "01");
+
+
     return (
-        <div key={props.id}><h1>Hello</h1>
-            <h1>Hours: {props.hours}</h1>
-            <h1>Minutes: {props.minutes}</h1>
-            <h1>Seconds: {props.seconds}</h1>
-            <h1>Comments: {props.comments}</h1>
-        </div>
+        <Row>
+            <Col>
+            <Card className="runCard">
+                <CardBody>
+                    <Row key={props.id}>
+                        <Col>
+                        <Moment format="MM/DD/YYYY"><Moment add={{ milliseconds: props.id }}>{d}</Moment></Moment>
+                            <div>
+                                <span>{hours}:</span><span>{minutes}:</span><span>{seconds}</span>
+                            </div>
+                            <div>
+                                <span>{props.distance} miles</span>
+                            </div>
+                           
+                        </Col>
+                        <Col>
+                            <div>
+                                {props.description}
+                            </div>
+                           
+                        </Col>
+                    </Row>
+            </CardBody>
+            </Card>
+        </Col>
+        </Row>
+   
 
     )
 

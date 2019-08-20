@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import API from "../../utils/API"
 import Run from "../Run";
+import { CardBody, Card , Row, Col } from "reactstrap"
+
 
 
 class List extends Component {
@@ -43,21 +45,30 @@ class List extends Component {
         return (
             <div>
                 {this.renderRedirect()}
-                <h1>List</h1>
-                <h2>{this.state.username}</h2>
-                {this.state.results.map(run => {
-                    return (
-                        <Run
-                            hours={run.hours}
-                            minutes={run.minutes}
-                            seconds={run.seconds}
-                            comments={run.comments}
-                            key={run.id}
-                        />
-                    )
+                <Row>
+                    <Col>
+                        <Card className="runCard">
+                            <CardBody className="listCardWrapper">
+                                <h4>{this.state.username}'s Runs</h4>
+                                    {this.state.results.map(run => {
+                                        return (
+                                         
+                                            <Run
+                                            hours={run.hours}
+                                            minutes={run.minutes}
+                                            seconds={run.seconds}
+                                            distance={run.distance}
+                                            description={run.description}
+                                            key={run.id}
+                                            id = {run.id}
+                                        />
+                                        )
 
-                })}
-
+                                        })}
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
             </div>
         )
     }
