@@ -5,13 +5,21 @@ import 'moment-timezone';
 
 function Run(props) {
 
-    let formatNumber = num => {
+    const formatNumber = num => {
         return ("0" + num).slice(-2)
+    }
+
+    const secondsConv = sec => {
+
     }
 
     let minutes = formatNumber(props.minutes);
     let hours = formatNumber(props.hours);
     let seconds = formatNumber(props.seconds);
+    let disance = props.disance;
+    let avgPace = "test"
+
+
 
     //date stuff
     let d = new Date("1970", "00", "01");
@@ -31,6 +39,9 @@ function Run(props) {
                             <div>
                                 <span>{props.distance} miles</span>
                             </div>
+                            <div>
+                                <span>{avgSpd} MPH</span>
+                            </div>
                            
                         </Col>
                         <Col>
@@ -44,8 +55,6 @@ function Run(props) {
             </Card>
         </Col>
         </Row>
-   
-
     )
 
 
