@@ -18,7 +18,7 @@ const style = {
 
 
 function Navigation() {
-    let isLoggedIn = window.localStorage.getItem("username"), logout = () => {
+    let isLoggedIn = window.localStorage.getItem("username"), logOut = () => {
     localStorage.clear();
     window.location.reload();
     }
@@ -35,7 +35,7 @@ function Navigation() {
                   <NavLink tag={Link} to="/list" >List</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/signin">Sign In</NavLink>
+                  <NavLink tag={Link} onClick={logOut} to="">Log Out</NavLink>
                 </NavItem>
               </Nav>
           </Navbar>

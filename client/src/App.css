@@ -1,6 +1,14 @@
 .App {
   text-align: center;
-  
+}
+
+.runnerLogo {
+  width: 50%;
+}
+
+.runDist {
+  font-weight: 700;
+  color:blue;
 }
 
 html {
