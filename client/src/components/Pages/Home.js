@@ -31,7 +31,6 @@ const Home = () => {
         })
     }
 
-
     const renderRedirect = () => {
         if (redirect) {
             return <Redirect to='/log' />
@@ -73,4 +72,5 @@ const Home = () => {
         </Row>
     )
 }
+
 export default Home;
