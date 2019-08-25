@@ -9,14 +9,14 @@ const List = () => {
     const [results, setResults] = useState([]);
     const [redirect, setRedirect] = useState(false);
 
-    
+
     const getRuns = (usnme) => {
         API.getUser(usnme).then(results => {
             console.log(results.data.activities)
             setResults(results.data.activities)
         })
     }
-    
+
     useEffect(() => {
         let user = JSON.parse(localStorage.getItem("username"))
         if (user) {
@@ -26,40 +26,40 @@ const List = () => {
     }, [])
 
 
-const renderRedirect = () => {
-    if (redirect) {
-        return <Redirect to='/' />
+    const renderRedirect = () => {
+        if (redirect) {
+            return <Redirect to='/' />
+        }
     }
-}
 
-return (
-    <div>
-        {renderRedirect()}
-        <Row>
-            <Col>
-                <Card className="runCard">
-                    <CardBody className="listCardWrapper">
-                        <h4>{username}'s Runs</h4>
-                        {results.map(run => {
-                            return (
+    return (
+        <div>
+            {renderRedirect()}
+            <Row>
+                <Col>
+                    <Card className="runCard">
+                        <CardBody className="listCardWrapper">
+                            <h4>{username}'s Runs</h4>
+                            {results.map(run => {
+                                return (
 
-                                <Run
-                                    hours={run.hours}
-                                    minutes={run.minutes}
-                                    seconds={run.seconds}
-                                    distance={run.distance}
-                                    description={run.description}
-                                    key={run.id}
-                                    id={run.id}
-                                />
-                            )
+                                    <Run
+                                        hours={run.hours}
+                                        minutes={run.minutes}
+                                        seconds={run.seconds}
+                                        distance={run.distance}
+                                        description={run.description}
+                                        key={run.id}
+                                        id={run.id}
+                                    />
+                                )
 
-                        })}
-                    </CardBody>
-                </Card>
-            </Col>
-        </Row>
-    </div>
-)
+                            })}
+                        </CardBody>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
+    )
 }
 export default List;
