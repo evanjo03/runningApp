@@ -42,7 +42,6 @@ const List = () => {
                             <h4>{username}'s Runs</h4>
                             {results.map(run => {
                                 return (
-
                                     <Run
                                         hours={run.hours}
                                         minutes={run.minutes}
@@ -53,7 +52,6 @@ const List = () => {
                                         id={run.id}
                                     />
                                 )
-
                             })}
                         </CardBody>
                     </Card>
@@ -62,4 +60,5 @@ const List = () => {
         </div>
     )
 }
+
 export default List;
