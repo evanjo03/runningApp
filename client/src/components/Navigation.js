@@ -35,6 +35,9 @@ function Navigation() {
                   <NavLink tag={Link} to="/list" >List</NavLink>
                 </NavItem>
                 <NavItem>
+                  <NavLink tag={Link} to="/chart" >List</NavLink>
+                </NavItem>
+                <NavItem>
                   <NavLink tag={Link} onClick={logOut} to="">Log Out</NavLink>
                 </NavItem>
               </Nav>

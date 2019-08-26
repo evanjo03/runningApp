@@ -35,11 +35,19 @@ const List = () => {
     return (
         <div>
             {renderRedirect()}
-            <Row>
-                <Col>
-                    <Card className="runCard">
-                        <CardBody className="listCardWrapper">
-                            <h4>{username}'s Runs</h4>
+            <Card className="runCard">
+                <CardBody className="listCardWrapper">
+                <h4>{username}'s Runs</h4>
+                    <Row>
+                        <Col sm={8}>
+                            <div>Graph</div>
+                        </Col>
+                        <Col sm = {4}>
+                            <div>Data</div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
                             {results.map(run => {
                                 return (
                                     <Run
@@ -53,10 +61,11 @@ const List = () => {
                                     />
                                 )
                             })}
-                        </CardBody>
-                    </Card>
-                </Col>
-            </Row>
+                        </Col>
+                    </Row>
+                </CardBody>
+            </Card>
+
         </div>
     )
 }
