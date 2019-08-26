@@ -6,7 +6,7 @@ import { Container } from "reactstrap"
 // import Navbar from "./components/Navbar"
 import Navigation from "./components/Navigation"
 import SignIn from "./components/Pages/SignIn";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 // import StickyFooter from 'react-sticky-footer';
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
