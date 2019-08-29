@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from 'react-router-dom';
 import API from "../../utils/API"
-import { Form, FormGroup, Label, Input, CardBody, Card, Row, Col } from "reactstrap"
+import { Form, FormGroup, Label, Input, CardBody, Card, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap"
 
 const Log = () => {
     const [username, setUsername] = useState("");
@@ -11,6 +11,7 @@ const Log = () => {
     const [distance, setDistance] = useState(0);
     const [description, setDescription] = useState("");
     const [redirect, setRedirect] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const renderRedirect = () => {
         if (redirect) {
@@ -32,8 +33,13 @@ const Log = () => {
             distance: distance,
             description: description
         }).then(result => {
-            console.log(result)
+            console.log(result);
+            toggle();
         })
+    }
+
+    const toggle = () => {
+        setShowModal(!showModal);
     }
 
     return (
@@ -42,7 +48,15 @@ const Log = () => {
                 <Card className="loginCard">
                     <CardBody>
                         {renderRedirect()}
-
+                        <Modal isOpen={showModal} toggle={toggle}>
+                            <ModalHeader toggle={toggle}>Nice Run!</ModalHeader>
+                            <ModalBody>
+                                Your run was successfully logged! Go to the List page to see your activity history!
+                        </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={toggle}>OK</Button>{' '}
+                            </ModalFooter>
+                        </Modal>
                         <h1>Log a Run</h1>
                         <h2>{username}</h2>
                         <Form onSubmit={handleSubmit}>
